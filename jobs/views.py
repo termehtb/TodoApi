@@ -4,6 +4,7 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.utils.datetime_safe import datetime
+from rest_framework import generics
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
@@ -14,6 +15,12 @@ from jobs.serializers import TodoSerializer
 from jobs import permissions
 
 from jobs.permissions import IsNotBanned, IsAdmin, IsOwnerOrAdmin
+
+from user.models import User
+
+from user.serializers import UserSerializer
+
+from userprofile.models import UserProfile
 
 """
 Below Function going to display all the tasks store in the data base.
@@ -36,7 +43,23 @@ def taskDetail(request, pk):
     serializer = TodoSerializer(tasks, many=False)
     return Response(serializer.data)
 
+@api_view(['GET'])
+def userlist(request):
+    users = UserProfile.objects.all()
+    serializer = UserSerializer(users, many=True)
+    permission_classes = [
+        permissions.IsAdmin]
 
+    return Response(serializer.data)
+
+@api_view(['GET'])
+def alltaskList(request):
+    tasks = Todojob.objects.all()
+    serializer = TodoSerializer(tasks, many=True)
+    permission_classes = [
+        permissions.IsAdmin]
+
+    return Response(serializer.data)
 
 @api_view(['POST'])
 def taskCreate(request):
