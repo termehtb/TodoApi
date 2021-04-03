@@ -10,6 +10,8 @@ from user.serializers import UserRegistrationSerializer
 
 from user.serializers import UserLoginSerializer
 
+from user.models import User
+
 
 class UserRegistrationView(CreateAPIView):
     serializer_class = UserRegistrationSerializer
@@ -33,13 +35,13 @@ class UserLoginView(RetrieveAPIView):
     serializer_class = UserLoginSerializer
 
     def post(self, request):
-        serializer = self.serializer_class(data=request.data)
+        serializer = self.serializer_class(data=self.request.data)
         serializer.is_valid(raise_exception=True)
         response = {
             'success': 'True',
-            'status code' : status.HTTP_200_OK,
+            'status code': status.HTTP_200_OK,
             'message': 'User logged in  successfully',
-            'token' : serializer.data['token'],
+            'token': serializer.data['token'],
             }
         status_code = status.HTTP_200_OK
 

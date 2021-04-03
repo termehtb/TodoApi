@@ -22,7 +22,7 @@ def taskList(request):
     tasks = Todojob.objects.filter(author=request.user)
     serializer = TodoSerializer(tasks, many=True)
     permission_classes = [
-        permissions.IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly]
+        permissions.IsOwnerOrAdminOrReadOnly, IsOwnerOrAdmin]
 
     return Response(serializer.data)
 
@@ -40,9 +40,9 @@ def taskDetail(request, pk):
 @api_view(['POST'])
 def taskCreate(request):
     serializer = TodoSerializer(data=request.data)
-    permission_classes = (permissions.IsAuthenticated)
+    permission_classes = (permissions.IsNotBanned)
     if serializer.is_valid():
-        serializer.save(author=self.request.user)
+        serializer.save(author=request.user)
     return Response(serializer.data)
 
 
