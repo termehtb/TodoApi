@@ -1,3 +1,4 @@
+import kwargs as kwargs
 import self as self
 from django.shortcuts import render
 
@@ -50,7 +51,7 @@ def taskCreate(request):
 @api_view(['POST'])
 def taskUpdate(request, pk):
     task = Todojob.objects.get(id=pk)
-    permission_classes = (permissions.IsAuthenticated, IsOwnerOrAdmin)
+    permission_classes = (permissions.IsOwnerOrAdmin)
     serializer = TodoSerializer(instance=task, data=request.data)
 
     if serializer.is_valid():
@@ -60,7 +61,7 @@ def taskUpdate(request, pk):
 
 @api_view(['DELETE'])
 def taskDelete(request, pk):
-    permission_classes = (permissions.IsAuthenticated, IsOwnerOrAdmin)
-    task = Todojob.objects.get(id = pk)
+    permission_classes = (permissions.IsOwnerOrAdmin)
+    task = Todojob.objects.get(id=pk)
     task.delete()
     return Response("Taks deleted successfully.")
