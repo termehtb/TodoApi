@@ -11,4 +11,6 @@ from user import views
 urlpatterns = [
     url(r'^signup', UserRegistrationView.as_view()),
     url(r'^signin', views.UserLoginView.as_view()),
-    ]
+    url('delete', views.DeleteUser.as_view()),
+
+]

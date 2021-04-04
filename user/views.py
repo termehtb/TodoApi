@@ -3,8 +3,9 @@ from django.shortcuts import render
 # Create your views here.
 from rest_framework import status
 from rest_framework.generics import CreateAPIView, RetrieveAPIView
-from rest_framework.permissions import AllowAny
+from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
+from rest_framework_jwt.authentication import JSONWebTokenAuthentication
 
 from user.serializers import UserRegistrationSerializer
 
@@ -46,3 +47,11 @@ class UserLoginView(RetrieveAPIView):
         status_code = status.HTTP_200_OK
 
         return Response(response, status=status_code)
+
+class DeleteUser(RetrieveAPIView):
+    permission_classes = (IsAuthenticated,)
+    authentication_class = JSONWebTokenAuthentication
+    def post(self, request):
+        user = request.user
+        user.delete()
+        return Response("user deleted successfully.")

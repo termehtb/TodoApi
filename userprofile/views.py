@@ -2,12 +2,17 @@ from django.shortcuts import render
 
 # Create your views here.
 from rest_framework import status
+from rest_framework.decorators import api_view
 from rest_framework.generics import RetrieveAPIView
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework_jwt.authentication import JSONWebTokenAuthentication
 
 from userprofile.models import UserProfile
+
+from jobs import permissions
+
+from user.serializers import UserSerializer
 
 
 class UserProfileView(RetrieveAPIView):
@@ -41,3 +46,13 @@ class UserProfileView(RetrieveAPIView):
                 'error': str(e)
                 }
         return Response(response, status=status_code)
+
+class ProfileUpdate(RetrieveAPIView):
+    permission_classes = (IsAuthenticated,)
+    authentication_class = JSONWebTokenAuthentication
+    def post(self, request):
+        profile = UserProfile.objects.get(user=request.user)
+        serializer = UserSerializer(instance=profile, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+        return Response(serializer.data)
