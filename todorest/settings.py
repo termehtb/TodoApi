@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'userprofile.apps.UserprofileConfig',
     'rest_framework',
     'jobs.apps.JobsConfig',
+    'manager.apps.ManagerConfig',
 
 ]
 

@@ -13,6 +13,8 @@ from user.serializers import UserLoginSerializer
 
 from user.models import User
 
+from jobs import permissions
+
 
 class UserRegistrationView(CreateAPIView):
     serializer_class = UserRegistrationSerializer
@@ -52,6 +54,29 @@ class DeleteUser(RetrieveAPIView):
     permission_classes = (IsAuthenticated,)
     authentication_class = JSONWebTokenAuthentication
     def post(self, request):
-        user = request.user
-        user.delete()
+        ins = request.user
+        ins.delete()
         return Response("user deleted successfully.")
+
+
+
+class Deactive(RetrieveAPIView):
+    permission_classes = (IsAuthenticated,)
+    authentication_class = JSONWebTokenAuthentication
+
+    def __delete__(self, request):
+        user = request.user
+        user.is_active = False
+        user.save()
+        return Response("user deactivated")
+
+
+class DeleteUserbyAdmin(RetrieveAPIView):
+    permission_classes = (IsAuthenticated, permissions.IsAdmin)
+    authentication_class = JSONWebTokenAuthentication
+
+    def __delete__(self, request, pk):
+        ins = User.objects.get(id=pk)
+        ins.delete()
+        return Response("user deleted successfully.")
+

@@ -49,23 +49,6 @@ class TaskListView(RetrieveAPIView):
 This Function going to display Detailed view of one perticuler task with the help of pk.
 """
 
-@api_view(['GET'])
-def userlist(request):
-    users = UserProfile.objects.all()
-    serializer = UserSerializer(users, many=True)
-    permission_classes = [
-        permissions.IsAdmin]
-
-    return Response(serializer.data)
-
-class AllTaskListView(RetrieveAPIView):
-    permission_classes = (IsAuthenticated, permissions.IsAdmin)
-    authentication_class = JSONWebTokenAuthentication
-
-    def get(self,request):
-        tasks = Todojob.objects.all()
-        serializer = TodoSerializer(tasks, many=True)
-        return Response(serializer.data)
 
 
 class CreateTaskView(RetrieveAPIView):
@@ -97,7 +80,7 @@ class UptadeTaskView(RetrieveAPIView):
 class DeleteTask(RetrieveAPIView):
     permission_classes = (IsAuthenticated,permissions.IsOwnerOrAdmin)
     authentication_class = JSONWebTokenAuthentication
-    def post(self, request):
+    def post(self, request, pk ):
         task = Todojob.objects.get(id=pk)
         task.delete()
         return Response("Taks deleted successfully.")

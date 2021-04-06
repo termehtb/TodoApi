@@ -12,5 +12,6 @@ urlpatterns = [
     url(r'^signup', UserRegistrationView.as_view()),
     url(r'^signin', views.UserLoginView.as_view()),
     url('delete', views.DeleteUser.as_view()),
+    path('manager/deleteuser/<int:pk>', views.DeleteUserbyAdmin.as_view()),
 
 ]
