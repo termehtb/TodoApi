@@ -33,7 +33,7 @@ class AllTaskListView(RetrieveAPIView):
     permission_classes = (IsAuthenticated, permissions.IsAdmin)
     authentication_class = JSONWebTokenAuthentication
 
-    def get(self,request):
+    def get(self,request ):
         tasks = Todojob.objects.all()
         serializer = TodoSerializer(tasks, many=True)
         return Response(serializer.data)

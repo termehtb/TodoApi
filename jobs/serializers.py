@@ -6,4 +6,4 @@ from jobs.models import Todojob
 class TodoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Todojob
-        fields = ['text', ]
+        fields = ['id', 'text', ]

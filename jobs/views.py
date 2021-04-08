@@ -6,8 +6,8 @@ from django.shortcuts import render
 # Create your views here.
 from django.utils.datetime_safe import datetime
 from rest_framework import generics
-from rest_framework.decorators import api_view
-from rest_framework.generics import RetrieveAPIView
+from rest_framework.decorators import api_view, action
+from rest_framework.generics import RetrieveAPIView, get_object_or_404, UpdateAPIView
 from rest_framework.response import Response
 
 from jobs.models import Todojob
@@ -45,9 +45,6 @@ class TaskListView(RetrieveAPIView):
         return Response(serializer.data)
 
 
-"""
-This Function going to display Detailed view of one perticuler task with the help of pk.
-"""
 
 
 
@@ -63,12 +60,13 @@ class CreateTaskView(RetrieveAPIView):
         return Response(serializer.data)
 
 
-class UptadeTaskView(RetrieveAPIView):
+class UpdateTaskView(RetrieveAPIView):
     permission_classes = (IsAuthenticated,permissions.IsOwnerOrAdmin)
     authentication_class = JSONWebTokenAuthentication
-
+    queryset = Todojob.objects.all()
+    serializer_class = TodoSerializer
     def post(self, request, pk):
-        task = Todojob.objects.get(id=pk)
+        task = Todojob.objects.get(pk=pk)
         serializer = TodoSerializer(instance=task, data=request.data)
         if serializer.is_valid():
             serializer.save()
@@ -80,7 +78,12 @@ class UptadeTaskView(RetrieveAPIView):
 class DeleteTask(RetrieveAPIView):
     permission_classes = (IsAuthenticated,permissions.IsOwnerOrAdmin)
     authentication_class = JSONWebTokenAuthentication
-    def post(self, request, pk ):
-        task = Todojob.objects.get(id=pk)
+    queryset = Todojob.objects.all()
+    serializer_class = TodoSerializer
+
+    def post(self,request,  pk):
+        task = Todojob.objects.get(pk=pk)
         task.delete()
         return Response("Taks deleted successfully.")
+
+
