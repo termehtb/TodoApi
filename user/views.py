@@ -80,11 +80,11 @@ class Deactive(RetrieveAPIView):
     permission_classes = (IsAuthenticated,)
     authentication_class = JSONWebTokenAuthentication
 
-    def __delete__(self, request):
+    def post(self, request):
         user = request.user
         user.is_active = False
         user.save()
-        logger.info('user ' + user + 'deactivated account')
+        logger.info('user ' + user.email + 'deactivated account')
         return Response("user deactivated")
 
 

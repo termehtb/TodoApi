@@ -699,3 +699,109 @@ INFO 2021-04-10 03:36:24,694  user dory1@gmail.comregistered successfully
 INFO 2021-04-10 03:36:24,696  "POST /api/signup HTTP/1.1" 201 78
 INFO 2021-04-10 03:40:46,948  C:\Users\Asus\PycharmProjects\TodoAppApi\todorest\user\views.py changed, reloading.
 INFO 2021-04-10 03:40:47,689  Watching for file changes with StatReloader
+INFO 2021-04-10 03:42:00,600  user dory1@gmail.comlogged in  successfully
+INFO 2021-04-10 03:42:00,601  "POST /api/signin HTTP/1.1" 200 332
+INFO 2021-04-10 03:43:00,706  C:\Users\Asus\PycharmProjects\TodoAppApi\todorest\user\urls.py changed, reloading.
+INFO 2021-04-10 03:43:01,508  Watching for file changes with StatReloader
+WARNING 2021-04-10 03:43:04,890  Not Found: /api/Deactive
+WARNING 2021-04-10 03:43:04,891  "POST /api/Deactive HTTP/1.1" 404 3471
+WARNING 2021-04-10 03:43:15,452  Method Not Allowed: /api/deactive
+WARNING 2021-04-10 03:43:15,452  "POST /api/deactive HTTP/1.1" 405 41
+INFO 2021-04-10 03:43:29,694  C:\Users\Asus\PycharmProjects\TodoAppApi\todorest\user\views.py changed, reloading.
+INFO 2021-04-10 03:43:30,426  Watching for file changes with StatReloader
+ERROR 2021-04-10 03:43:31,079  Internal Server Error: /api/deactive
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\todorest\user\views.py", line 87, in post
+    logger.info('user ' + user + 'deactivated account')
+TypeError: can only concatenate str (not "User") to str
+ERROR 2021-04-10 03:43:31,083  "POST /api/deactive HTTP/1.1" 500 95411
+INFO 2021-04-10 03:44:31,934  C:\Users\Asus\PycharmProjects\TodoAppApi\todorest\user\views.py changed, reloading.
+INFO 2021-04-10 03:44:32,692  Watching for file changes with StatReloader
+WARNING 2021-04-10 03:44:33,273  Unauthorized: /api/deactive
+WARNING 2021-04-10 03:44:33,273  "POST /api/deactive HTTP/1.1" 401 38
+INFO 2021-04-10 03:44:42,044  C:\Users\Asus\PycharmProjects\TodoAppApi\todorest\user\views.py changed, reloading.
+INFO 2021-04-10 03:44:42,717  Watching for file changes with StatReloader
+INFO 2021-04-10 03:44:50,247  "GET /admin/django_user_interaction_log/logrecordsmodel/ HTTP/1.1" 200 6259
+INFO 2021-04-10 03:44:50,275  "GET /static/admin/css/changelists.css HTTP/1.1" 200 6302
+INFO 2021-04-10 03:44:50,278  "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2021-04-10 03:44:50,278  "GET /static/admin/js/core.js HTTP/1.1" 200 5418
+INFO 2021-04-10 03:44:50,285  "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 6078
+INFO 2021-04-10 03:44:50,285  "GET /static/admin/js/actions.js HTTP/1.1" 200 6783
+INFO 2021-04-10 03:44:50,285  "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-04-10 03:44:50,288  "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2021-04-10 03:44:50,289  "GET /static/admin/js/urlify.js HTTP/1.1" 200 8632
+INFO 2021-04-10 03:44:50,292  "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 287630
+INFO 2021-04-10 03:44:50,294  "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 232381
+INFO 2021-04-10 03:44:50,302  "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+INFO 2021-04-10 03:44:50,332  "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2021-04-10 03:44:52,614  "GET /admin/ HTTP/1.1" 200 5009
+INFO 2021-04-10 03:44:54,988  "GET /admin/user/user/ HTTP/1.1" 200 8134
+INFO 2021-04-10 03:44:55,009  "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-04-10 03:44:59,121  "GET /admin/user/user/972fcce2-14b0-43aa-ab6c-faacc04e9e3b/change/ HTTP/1.1" 200 13706
+INFO 2021-04-10 03:44:59,144  "GET /static/admin/js/calendar.js HTTP/1.1" 200 7788
+INFO 2021-04-10 03:44:59,144  "GET /static/admin/css/forms.css HTTP/1.1" 200 8423
+INFO 2021-04-10 03:44:59,145  "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 19750
+INFO 2021-04-10 03:44:59,150  "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-04-10 03:44:59,151  "GET /static/admin/css/widgets.css HTTP/1.1" 200 10592
+INFO 2021-04-10 03:44:59,156  "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2021-04-10 03:44:59,157  "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 492
+INFO 2021-04-10 03:44:59,195  "GET /static/admin/img/icon-clock.svg HTTP/1.1" 200 677
+INFO 2021-04-10 03:44:59,195  "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+INFO 2021-04-10 03:45:23,336  C:\Users\Asus\PycharmProjects\TodoAppApi\todorest\user\views.py changed, reloading.
+INFO 2021-04-10 03:45:23,980  Watching for file changes with StatReloader
+WARNING 2021-04-10 03:45:34,497  Unauthorized: /api/deactive
+WARNING 2021-04-10 03:45:34,498  "POST /api/deactive HTTP/1.1" 401 38
+WARNING 2021-04-10 03:46:07,269  Unauthorized: /api/signin
+WARNING 2021-04-10 03:46:07,270  "POST /api/signin HTTP/1.1" 401 38
+WARNING 2021-04-10 03:46:09,813  Unauthorized: /api/signin
+WARNING 2021-04-10 03:46:09,815  "POST /api/signin HTTP/1.1" 401 38
+WARNING 2021-04-10 03:47:43,166  Unauthorized: /api/signin
+WARNING 2021-04-10 03:47:43,167  "POST /api/signin HTTP/1.1" 401 38
+WARNING 2021-04-10 03:47:49,292  Unauthorized: /api/signin
+WARNING 2021-04-10 03:47:49,293  "POST /api/signin HTTP/1.1" 401 38
+INFO 2021-04-10 03:48:02,041  "GET /admin/user/user/ HTTP/1.1" 200 8134
+INFO 2021-04-10 03:48:02,066  "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-04-10 03:48:04,479  "GET /admin/user/user/c42b7770-a89c-43a6-95a0-2ae7fd4d2f11/change/ HTTP/1.1" 200 13728
+INFO 2021-04-10 03:48:04,507  "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-04-10 03:48:07,544  "GET /admin/user/user/ HTTP/1.1" 200 8134
+INFO 2021-04-10 03:48:07,566  "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-04-10 03:48:11,311  "GET /admin/user/user/c42b7770-a89c-43a6-95a0-2ae7fd4d2f11/change/ HTTP/1.1" 200 13728
+INFO 2021-04-10 03:48:11,338  "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-04-10 03:48:16,973  "GET /admin/user/user/ HTTP/1.1" 200 8134
+INFO 2021-04-10 03:48:16,995  "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-04-10 03:48:19,645  "GET /admin/user/user/ HTTP/1.1" 200 8134
+INFO 2021-04-10 03:48:19,667  "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-04-10 03:48:22,023  "GET /admin/user/user/c42b7770-a89c-43a6-95a0-2ae7fd4d2f11/change/ HTTP/1.1" 200 13728
+INFO 2021-04-10 03:48:22,047  "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-04-10 03:48:34,515  "GET /admin/user/user/ HTTP/1.1" 200 8134
+INFO 2021-04-10 03:48:48,952  user dory@gmail.comlogged in  successfully
+INFO 2021-04-10 03:48:48,953  "POST /api/signin HTTP/1.1" 200 329
+INFO 2021-04-10 03:49:11,598  user dory@gmail.comdeactivated account
+INFO 2021-04-10 03:49:11,599  "POST /api/deactive HTTP/1.1" 200 18
+WARNING 2021-04-10 03:50:55,752  Unauthorized: /api/signin
+WARNING 2021-04-10 03:50:55,752  "POST /api/signin HTTP/1.1" 401 38
+INFO 2021-04-10 03:51:02,027  user ram@gmail.comlogged in  successfully
+INFO 2021-04-10 03:51:02,028  "POST /api/signin HTTP/1.1" 200 327
+INFO 2021-04-10 03:51:38,462  "POST /api/profile/update HTTP/1.1" 200 2
+WARNING 2021-04-10 03:51:48,795  Method Not Allowed: /api/profile
+WARNING 2021-04-10 03:51:48,796  "POST /api/profile HTTP/1.1" 405 41
+INFO 2021-04-10 03:51:53,576  "GET /api/profile HTTP/1.1" 200 182
+WARNING 2021-04-10 03:52:22,851  Bad Request: /api/profile/update
+WARNING 2021-04-10 03:52:22,852  "POST /api/profile/update HTTP/1.1" 400 83
+INFO 2021-04-10 03:52:37,515  "POST /api/profile/update HTTP/1.1" 200 135
