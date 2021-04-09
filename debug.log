@@ -1,0 +1,701 @@
+INFO 2021-04-10 00:06:01,915  Watching for file changes with StatReloader
+WARNING 2021-04-10 00:06:04,002  Not Found: /
+WARNING 2021-04-10 00:06:04,003  "GET / HTTP/1.1" 404 2471
+INFO 2021-04-10 00:06:31,588  "POST /api/signin HTTP/1.1" 200 327
+ERROR 2021-04-10 00:07:07,803  Internal Server Error: /job/create
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\todorest\jobs\views.py", line 61, in post
+    logger.info('{} craated new task: {}'.format(request.user, serializer.data.text))
+AttributeError: 'ReturnDict' object has no attribute 'text'
+ERROR 2021-04-10 00:07:07,805  "POST /job/create HTTP/1.1" 500 95445
+ERROR 2021-04-10 00:07:22,209  Internal Server Error: /job/create
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\todorest\jobs\views.py", line 61, in post
+    logger.info('{} craated new task: {}'.format(request.user, serializer.data.text))
+AttributeError: 'ReturnDict' object has no attribute 'text'
+ERROR 2021-04-10 00:07:22,210  "POST /job/create HTTP/1.1" 500 95445
+INFO 2021-04-10 00:07:55,505  C:\Users\Asus\PycharmProjects\TodoAppApi\todorest\jobs\views.py changed, reloading.
+INFO 2021-04-10 00:07:55,939  Watching for file changes with StatReloader
+INFO 2021-04-10 00:07:56,342  "POST /job/create HTTP/1.1" 200 29
+INFO 2021-04-10 00:08:21,611  C:\Users\Asus\PycharmProjects\TodoAppApi\todorest\jobs\views.py changed, reloading.
+INFO 2021-04-10 00:08:22,036  Watching for file changes with StatReloader
+INFO 2021-04-10 00:08:23,338  task created
+INFO 2021-04-10 00:08:23,339  "POST /job/create HTTP/1.1" 200 30
+INFO 2021-04-10 00:10:13,240  C:\Users\Asus\PycharmProjects\TodoAppApi\todorest\jobs\views.py changed, reloading.
+INFO 2021-04-10 00:10:13,683  Watching for file changes with StatReloader
+INFO 2021-04-10 00:10:14,967  sam@gmail.comcreated new task
+INFO 2021-04-10 00:10:14,969  "POST /job/create HTTP/1.1" 200 30
+INFO 2021-04-10 00:10:50,017  C:\Users\Asus\PycharmProjects\TodoAppApi\todorest\jobs\views.py changed, reloading.
+INFO 2021-04-10 00:10:50,458  Watching for file changes with StatReloader
+ERROR 2021-04-10 00:10:51,974  Internal Server Error: /job/create
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\todorest\jobs\views.py", line 61, in post
+    logger.info(request.user.email + 'created new task:' + serializer.data )
+TypeError: can only concatenate str (not "ReturnDict") to str
+ERROR 2021-04-10 00:10:51,975  "POST /job/create HTTP/1.1" 500 95369
+INFO 2021-04-10 00:11:05,508  C:\Users\Asus\PycharmProjects\TodoAppApi\todorest\jobs\views.py changed, reloading.
+INFO 2021-04-10 00:11:05,950  Watching for file changes with StatReloader
+ERROR 2021-04-10 00:11:07,506  Internal Server Error: /job/create
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\todorest\jobs\views.py", line 61, in post
+    logger.info(request.user.email + 'created new task:' + serializer.data.text )
+AttributeError: 'ReturnDict' object has no attribute 'text'
+ERROR 2021-04-10 00:11:07,508  "POST /job/create HTTP/1.1" 500 95437
+INFO 2021-04-10 00:11:34,763  C:\Users\Asus\PycharmProjects\TodoAppApi\todorest\jobs\views.py changed, reloading.
+INFO 2021-04-10 00:11:35,202  Watching for file changes with StatReloader
+ERROR 2021-04-10 00:11:36,301  Internal Server Error: /job/create
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\todorest\jobs\views.py", line 60, in post
+    logger.info(request.user.email + 'created new task:' + serializer.data)
+TypeError: can only concatenate str (not "ReturnDict") to str
+ERROR 2021-04-10 00:11:36,302  "POST /job/create HTTP/1.1" 500 95357
+INFO 2021-04-10 00:11:56,558  C:\Users\Asus\PycharmProjects\TodoAppApi\todorest\jobs\views.py changed, reloading.
+INFO 2021-04-10 00:11:57,002  Watching for file changes with StatReloader
+ERROR 2021-04-10 00:11:57,860  Internal Server Error: /job/create
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\todorest\jobs\views.py", line 60, in post
+    logger.info(request.user.email + 'created new task:' + request.data)
+TypeError: can only concatenate str (not "dict") to str
+ERROR 2021-04-10 00:11:57,861  "POST /job/create HTTP/1.1" 500 95315
+INFO 2021-04-10 00:12:04,672  C:\Users\Asus\PycharmProjects\TodoAppApi\todorest\jobs\views.py changed, reloading.
+INFO 2021-04-10 00:12:05,122  Watching for file changes with StatReloader
+ERROR 2021-04-10 00:12:05,662  Internal Server Error: /job/create
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\todorest\jobs\views.py", line 60, in post
+    logger.info(request.user.email + 'created new task:' + request.data.text)
+AttributeError: 'dict' object has no attribute 'text'
+ERROR 2021-04-10 00:12:05,664  "POST /job/create HTTP/1.1" 500 95383
+INFO 2021-04-10 02:09:28,028  Watching for file changes with StatReloader
+ERROR 2021-04-10 02:09:31,700  Internal Server Error: /job/create
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\todorest\jobs\views.py", line 60, in post
+    logger.info(request.user.email + 'created new task:' + serializer.datap)
+AttributeError: 'TodoSerializer' object has no attribute 'datap'
+ERROR 2021-04-10 02:09:31,703  "POST /job/create HTTP/1.1" 500 95752
+INFO 2021-04-10 02:09:40,376  C:\Users\Asus\PycharmProjects\TodoAppApi\todorest\jobs\views.py changed, reloading.
+INFO 2021-04-10 02:09:40,929  Watching for file changes with StatReloader
+ERROR 2021-04-10 02:09:41,732  Internal Server Error: /job/create
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\todorest\jobs\views.py", line 60, in post
+    logger.info(request.user.email + 'created new task:' + serializer.text)
+AttributeError: 'TodoSerializer' object has no attribute 'text'
+ERROR 2021-04-10 02:09:41,734  "POST /job/create HTTP/1.1" 500 95744
+INFO 2021-04-10 02:09:49,712  C:\Users\Asus\PycharmProjects\TodoAppApi\todorest\jobs\views.py changed, reloading.
+INFO 2021-04-10 02:09:50,277  Watching for file changes with StatReloader
+ERROR 2021-04-10 02:09:50,685  Internal Server Error: /job/create
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\todorest\jobs\views.py", line 60, in post
+    logger.info(request.user.email + 'created new task:' + serializer)
+TypeError: can only concatenate str (not "TodoSerializer") to str
+ERROR 2021-04-10 02:09:50,688  "POST /job/create HTTP/1.1" 500 95676
+INFO 2021-04-10 02:09:54,974  C:\Users\Asus\PycharmProjects\TodoAppApi\todorest\jobs\views.py changed, reloading.
+INFO 2021-04-10 02:09:55,524  Watching for file changes with StatReloader
+INFO 2021-04-10 02:09:56,058  sam@gmail.comcreated new task:
+INFO 2021-04-10 02:09:56,071  "POST /job/create HTTP/1.1" 200 30
+INFO 2021-04-10 02:10:27,634  C:\Users\Asus\PycharmProjects\TodoAppApi\todorest\jobs\views.py changed, reloading.
+INFO 2021-04-10 02:10:28,470  Watching for file changes with StatReloader
+ERROR 2021-04-10 02:10:28,989  Internal Server Error: /job/create
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\todorest\jobs\views.py", line 60, in post
+    logger.info(request.user.email + 'created new task:' + serializer.data.text)
+AttributeError: 'ReturnDict' object has no attribute 'text'
+ERROR 2021-04-10 02:10:28,991  "POST /job/create HTTP/1.1" 500 95730
+INFO 2021-04-10 02:11:42,217  C:\Users\Asus\PycharmProjects\TodoAppApi\todorest\jobs\views.py changed, reloading.
+INFO 2021-04-10 02:11:42,852  Watching for file changes with StatReloader
+ERROR 2021-04-10 02:11:44,752  Internal Server Error: /job/create
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\todorest\jobs\views.py", line 60, in post
+    logger.info(request.user.email + 'created new task:' + request.data)
+TypeError: can only concatenate str (not "dict") to str
+ERROR 2021-04-10 02:11:44,756  "POST /job/create HTTP/1.1" 500 95620
+INFO 2021-04-10 02:11:49,894  C:\Users\Asus\PycharmProjects\TodoAppApi\todorest\jobs\views.py changed, reloading.
+INFO 2021-04-10 02:11:50,434  Watching for file changes with StatReloader
+ERROR 2021-04-10 02:11:51,336  Internal Server Error: /job/create
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\todorest\jobs\views.py", line 60, in post
+    logger.info(request.user.email + 'created new task:' + request.data.text)
+AttributeError: 'dict' object has no attribute 'text'
+ERROR 2021-04-10 02:11:51,337  "POST /job/create HTTP/1.1" 500 95688
+INFO 2021-04-10 02:12:04,656  C:\Users\Asus\PycharmProjects\TodoAppApi\todorest\jobs\views.py changed, reloading.
+INFO 2021-04-10 02:12:05,280  Watching for file changes with StatReloader
+INFO 2021-04-10 02:12:36,893  C:\Users\Asus\PycharmProjects\TodoAppApi\todorest\jobs\views.py changed, reloading.
+INFO 2021-04-10 02:12:37,625  Watching for file changes with StatReloader
+ERROR 2021-04-10 02:12:38,282  Internal Server Error: /job/create
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\todorest\jobs\views.py", line 60, in post
+    logger.info(request.user.email + 'created new task:' + request.data.text)
+AttributeError: 'dict' object has no attribute 'text'
+ERROR 2021-04-10 02:12:38,285  "POST /job/create HTTP/1.1" 500 95688
+INFO 2021-04-10 02:12:43,399  C:\Users\Asus\PycharmProjects\TodoAppApi\todorest\jobs\views.py changed, reloading.
+INFO 2021-04-10 02:12:43,983  Watching for file changes with StatReloader
+ERROR 2021-04-10 02:12:45,643  Internal Server Error: /job/create
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\todorest\jobs\views.py", line 60, in post
+    logger.info(request.user.email + 'created new task:' + request.data)
+TypeError: can only concatenate str (not "dict") to str
+ERROR 2021-04-10 02:12:45,645  "POST /job/create HTTP/1.1" 500 95620
+INFO 2021-04-10 02:14:19,942  C:\Users\Asus\PycharmProjects\TodoAppApi\todorest\jobs\views.py changed, reloading.
+INFO 2021-04-10 02:14:20,672  Watching for file changes with StatReloader
+ERROR 2021-04-10 02:14:23,893  Internal Server Error: /job/create
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\todorest\jobs\views.py", line 60, in post
+    logger.info(request.user.email + 'created new task:' + serializer)
+TypeError: can only concatenate str (not "TodoSerializer") to str
+ERROR 2021-04-10 02:14:23,896  "POST /job/create HTTP/1.1" 500 95676
+INFO 2021-04-10 02:14:31,880  C:\Users\Asus\PycharmProjects\TodoAppApi\todorest\jobs\views.py changed, reloading.
+INFO 2021-04-10 02:14:32,505  Watching for file changes with StatReloader
+ERROR 2021-04-10 02:14:33,333  Internal Server Error: /job/create
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\todorest\jobs\views.py", line 60, in post
+    logger.info(request.user.email + 'created new task:' + serializer.data)
+TypeError: can only concatenate str (not "ReturnDict") to str
+ERROR 2021-04-10 02:14:33,336  "POST /job/create HTTP/1.1" 500 95662
+ERROR 2021-04-10 02:14:34,603  Internal Server Error: /job/create
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\todorest\jobs\views.py", line 60, in post
+    logger.info(request.user.email + 'created new task:' + serializer.data)
+TypeError: can only concatenate str (not "ReturnDict") to str
+ERROR 2021-04-10 02:14:34,604  "POST /job/create HTTP/1.1" 500 95662
+INFO 2021-04-10 02:15:39,385  C:\Users\Asus\PycharmProjects\TodoAppApi\todorest\jobs\views.py changed, reloading.
+INFO 2021-04-10 02:15:40,240  Watching for file changes with StatReloader
+ERROR 2021-04-10 02:15:45,117  Internal Server Error: /job/create
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\todorest\jobs\views.py", line 61, in post
+    logger.info(request.user.email + 'created new task:' + data)
+TypeError: can only concatenate str (not "dict") to str
+ERROR 2021-04-10 02:15:45,119  "POST /job/create HTTP/1.1" 500 95783
+INFO 2021-04-10 02:16:08,803  C:\Users\Asus\PycharmProjects\TodoAppApi\todorest\jobs\views.py changed, reloading.
+INFO 2021-04-10 02:16:09,529  Watching for file changes with StatReloader
+ERROR 2021-04-10 02:16:14,987  Internal Server Error: /job/create
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\todorest\jobs\views.py", line 58, in post
+    data = serializer.data.text
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\serializers.py", line 548, in data
+    ret = super().data
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\serializers.py", line 242, in data
+    raise AssertionError(msg)
+AssertionError: When a serializer is passed a `data` keyword argument you must call `.is_valid()` before attempting to access the serialized `.data` representation.
+You should either call `.is_valid()` first, or access `.initial_data` instead.
+ERROR 2021-04-10 02:16:14,990  "POST /job/create HTTP/1.1" 500 105123
+ERROR 2021-04-10 02:16:16,091  Internal Server Error: /job/create
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\todorest\jobs\views.py", line 58, in post
+    data = serializer.data.text
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\serializers.py", line 548, in data
+    ret = super().data
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\serializers.py", line 242, in data
+    raise AssertionError(msg)
+AssertionError: When a serializer is passed a `data` keyword argument you must call `.is_valid()` before attempting to access the serialized `.data` representation.
+You should either call `.is_valid()` first, or access `.initial_data` instead.
+ERROR 2021-04-10 02:16:16,093  "POST /job/create HTTP/1.1" 500 105123
+INFO 2021-04-10 02:17:33,224  C:\Users\Asus\PycharmProjects\TodoAppApi\todorest\jobs\views.py changed, reloading.
+INFO 2021-04-10 02:17:33,937  Watching for file changes with StatReloader
+INFO 2021-04-10 02:17:38,191  sam@gmail.comcreated new task:testing log
+INFO 2021-04-10 02:17:38,204  "POST /job/create HTTP/1.1" 200 30
+INFO 2021-04-10 02:21:14,697  C:\Users\Asus\PycharmProjects\TodoAppApi\todorest\jobs\views.py changed, reloading.
+INFO 2021-04-10 02:21:15,467  Watching for file changes with StatReloader
+INFO 2021-04-10 02:21:34,557  sam@gmail.comupdated task: testing logto testing log1
+INFO 2021-04-10 02:21:34,566  "POST /job/update/14 HTTP/1.1" 200 31
+INFO 2021-04-10 02:23:24,997  C:\Users\Asus\PycharmProjects\TodoAppApi\todorest\jobs\views.py changed, reloading.
+INFO 2021-04-10 02:23:25,663  Watching for file changes with StatReloader
+INFO 2021-04-10 02:23:31,331  sam@gmail.com deleted testing log1
+INFO 2021-04-10 02:23:31,332  "POST /job/delete/14 HTTP/1.1" 200 28
+INFO 2021-04-10 02:25:22,208  C:\Users\Asus\PycharmProjects\TodoAppApi\todorest\user\views.py changed, reloading.
+INFO 2021-04-10 02:25:23,036  Watching for file changes with StatReloader
+INFO 2021-04-10 02:44:44,671  C:\Users\Asus\PycharmProjects\TodoAppApi\todorest\user\views.py changed, reloading.
+INFO 2021-04-10 02:44:45,185  Watching for file changes with StatReloader
+INFO 2021-04-10 03:30:52,754  Watching for file changes with StatReloader
+WARNING 2021-04-10 03:32:22,011  Unauthorized: /api/signup
+WARNING 2021-04-10 03:32:22,012  "POST /api/signup HTTP/1.1" 401 35
+ERROR 2021-04-10 03:32:29,221  Internal Server Error: /api/signup
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\todorest\user\views.py", line 31, in post
+    serializer.is_valid(raise_exception=True)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\serializers.py", line 220, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\serializers.py", line 419, in run_validation
+    value = self.to_internal_value(data)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\serializers.py", line 472, in to_internal_value
+    for field in fields:
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\serializers.py", line 355, in _writable_fields
+    for field in self.fields.values():
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\utils\functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\serializers.py", line 349, in fields
+    for key, value in self.get_fields().items():
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\serializers.py", line 1054, in get_fields
+    source, info, model, depth
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\serializers.py", line 1199, in build_field
+    return self.build_unknown_field(field_name, model_class)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\serializers.py", line 1319, in build_unknown_field
+    (field_name, model_class.__name__)
+django.core.exceptions.ImproperlyConfigured: Field name `role` is not valid for model `User`.
+ERROR 2021-04-10 03:32:29,225  "POST /api/signup HTTP/1.1" 500 143178
+WARNING 2021-04-10 03:32:35,585  Bad Request: /api/signin
+WARNING 2021-04-10 03:32:35,586  "POST /api/signin HTTP/1.1" 400 74
+WARNING 2021-04-10 03:32:41,718  Bad Request: /api/signin
+WARNING 2021-04-10 03:32:41,719  "POST /api/signin HTTP/1.1" 400 74
+ERROR 2021-04-10 03:32:48,590  Internal Server Error: /api/signup
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\todorest\user\views.py", line 31, in post
+    serializer.is_valid(raise_exception=True)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\serializers.py", line 220, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\serializers.py", line 419, in run_validation
+    value = self.to_internal_value(data)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\serializers.py", line 472, in to_internal_value
+    for field in fields:
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\serializers.py", line 355, in _writable_fields
+    for field in self.fields.values():
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\utils\functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\serializers.py", line 349, in fields
+    for key, value in self.get_fields().items():
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\serializers.py", line 1054, in get_fields
+    source, info, model, depth
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\serializers.py", line 1199, in build_field
+    return self.build_unknown_field(field_name, model_class)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\serializers.py", line 1319, in build_unknown_field
+    (field_name, model_class.__name__)
+django.core.exceptions.ImproperlyConfigured: Field name `role` is not valid for model `User`.
+ERROR 2021-04-10 03:32:48,593  "POST /api/signup HTTP/1.1" 500 143178
+INFO 2021-04-10 03:33:03,717  C:\Users\Asus\PycharmProjects\TodoAppApi\todorest\user\views.py changed, reloading.
+INFO 2021-04-10 03:33:04,488  Watching for file changes with StatReloader
+ERROR 2021-04-10 03:33:06,020  Internal Server Error: /api/signup
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\todorest\user\views.py", line 31, in post
+    serializer.is_valid(raise_exception=True)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\serializers.py", line 220, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\serializers.py", line 419, in run_validation
+    value = self.to_internal_value(data)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\serializers.py", line 472, in to_internal_value
+    for field in fields:
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\serializers.py", line 355, in _writable_fields
+    for field in self.fields.values():
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\utils\functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\serializers.py", line 349, in fields
+    for key, value in self.get_fields().items():
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\serializers.py", line 1054, in get_fields
+    source, info, model, depth
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\serializers.py", line 1199, in build_field
+    return self.build_unknown_field(field_name, model_class)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\serializers.py", line 1319, in build_unknown_field
+    (field_name, model_class.__name__)
+django.core.exceptions.ImproperlyConfigured: Field name `role` is not valid for model `User`.
+ERROR 2021-04-10 03:33:06,029  "POST /api/signup HTTP/1.1" 500 143178
+INFO 2021-04-10 03:34:51,446  C:\Users\Asus\PycharmProjects\TodoAppApi\todorest\user\serializers.py changed, reloading.
+INFO 2021-04-10 03:34:52,323  Watching for file changes with StatReloader
+INFO 2021-04-10 03:35:18,952  "POST /api/signup HTTP/1.1" 201 78
+WARNING 2021-04-10 03:35:37,143  Not Found: /
+WARNING 2021-04-10 03:35:37,144  "GET / HTTP/1.1" 404 2471
+INFO 2021-04-10 03:35:40,697  "GET /admin HTTP/1.1" 301 0
+INFO 2021-04-10 03:35:40,751  "GET /admin/ HTTP/1.1" 302 0
+INFO 2021-04-10 03:35:40,791  "GET /admin/login/?next=/admin/ HTTP/1.1" 200 2199
+INFO 2021-04-10 03:35:40,809  "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2138
+INFO 2021-04-10 03:35:40,809  "GET /static/admin/css/base.css HTTP/1.1" 200 16307
+INFO 2021-04-10 03:35:40,810  "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 1360
+INFO 2021-04-10 03:35:40,811  "GET /static/admin/css/login.css HTTP/1.1" 200 1185
+INFO 2021-04-10 03:35:40,811  "GET /static/admin/css/responsive.css HTTP/1.1" 200 18344
+INFO 2021-04-10 03:35:41,397  "GET /admin/ HTTP/1.1" 302 0
+INFO 2021-04-10 03:35:41,427  "GET /admin/login/?next=/admin/ HTTP/1.1" 200 2199
+INFO 2021-04-10 03:35:41,451  "GET /static/admin/css/fonts.css HTTP/1.1" 200 423
+INFO 2021-04-10 03:35:41,476  "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 85876
+INFO 2021-04-10 03:35:41,477  "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 85692
+INFO 2021-04-10 03:35:56,125  "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2021-04-10 03:35:56,189  "GET /admin/ HTTP/1.1" 200 5009
+INFO 2021-04-10 03:35:56,222  "GET /static/admin/css/dashboard.css HTTP/1.1" 200 380
+INFO 2021-04-10 03:35:56,228  "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2021-04-10 03:35:56,228  "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2021-04-10 03:35:56,245  "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 86184
+INFO 2021-04-10 03:36:09,389  C:\Users\Asus\PycharmProjects\TodoAppApi\todorest\user\views.py changed, reloading.
+INFO 2021-04-10 03:36:10,287  Watching for file changes with StatReloader
+INFO 2021-04-10 03:36:24,694  user dory1@gmail.comregistered successfully
+INFO 2021-04-10 03:36:24,696  "POST /api/signup HTTP/1.1" 201 78
+INFO 2021-04-10 03:40:46,948  C:\Users\Asus\PycharmProjects\TodoAppApi\todorest\user\views.py changed, reloading.
+INFO 2021-04-10 03:40:47,689  Watching for file changes with StatReloader

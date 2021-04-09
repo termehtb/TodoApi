@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'jobs.apps.JobsConfig',
     'manager.apps.ManagerConfig',
+    'django_user_interaction_log',
 
 ]
 
@@ -127,6 +128,34 @@ DATABASES = {
         'HOST': '127.0.0.1',
         'PORT': '3306',
     }
+}
+
+LOGGING = {
+    'version': 1,
+    'loggers': {
+        'django':{
+            'handlers': ['file'],
+            'level': 'INFO'
+
+
+        }
+    },
+    'handlers': {
+        'file': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'filename': './debug.log',
+            'formatter': 'verbose',
+
+        }
+    },
+    'formatters': {
+        'verbose': {
+            'format': '{levelname} {asctime}  {message}',
+            'style': '{',
+        },
+    }
+
 }
 
 

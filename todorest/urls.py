@@ -23,5 +23,7 @@ urlpatterns = [
    path('api/', include('userprofile.urls')),
    path('job/', include('jobs.urls')),
    path('manager/', include('manager.urls')),
+   path('django_user_interaction_log/', include('django_user_interaction_log.urls')),
+
 
 ]

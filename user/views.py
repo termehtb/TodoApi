@@ -1,3 +1,5 @@
+import logging
+
 from django.shortcuts import render
 
 # Create your views here.
@@ -17,6 +19,8 @@ from jobs import permissions
 
 from user.serializers import UserSerializer
 
+logger = logging.getLogger('django')
+
 
 class UserRegistrationView(CreateAPIView):
     serializer_class = UserRegistrationSerializer
@@ -25,6 +29,7 @@ class UserRegistrationView(CreateAPIView):
     def post(self, request):
         serializer = self.serializer_class(data=request.data)
         serializer.is_valid(raise_exception=True)
+        email = serializer.validated_data['email']
         serializer.save()
         status_code = status.HTTP_201_CREATED
         response = {
@@ -32,6 +37,9 @@ class UserRegistrationView(CreateAPIView):
             'status code': status_code,
             'message': 'User registered  successfully',
         }
+        logger.info('user ' + email + ' registered successfully')
+
+
 
         return Response(response, status=status_code)
 
@@ -42,6 +50,7 @@ class UserLoginView(RetrieveAPIView):
     def post(self, request):
         serializer = self.serializer_class(data=self.request.data)
         serializer.is_valid(raise_exception=True)
+        email = serializer.validated_data['email']
         response = {
             'success': 'True',
             'status code': status.HTTP_200_OK,
@@ -49,6 +58,8 @@ class UserLoginView(RetrieveAPIView):
             'token': serializer.data['token'],
             }
         status_code = status.HTTP_200_OK
+        logger.info('user ' + email + 'logged in  successfully')
+
 
         return Response(response, status=status_code)
 
@@ -57,8 +68,11 @@ class DeleteUser(RetrieveAPIView):
     authentication_class = JSONWebTokenAuthentication
     def post(self, request):
         ins = request.user
+        email = ins.email
         ins.delete()
+        logger.info('user ' + email + 'deleted account')
         return Response("user deleted successfully.")
+
 
 
 
@@ -70,6 +84,7 @@ class Deactive(RetrieveAPIView):
         user = request.user
         user.is_active = False
         user.save()
+        logger.info('user ' + user + 'deactivated account')
         return Response("user deactivated")
 
 

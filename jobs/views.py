@@ -1,3 +1,5 @@
+import logging
+
 import kwargs as kwargs
 import self as self
 from django.http.response import JsonResponse
@@ -32,7 +34,7 @@ from jobs.utils import Red
 Below Function going to display all the tasks store in the data base.
 """
 
-
+logger = logging.getLogger('django')
 
 class TaskListView(RetrieveAPIView):
     permission_classes = (IsAuthenticated, permissions.IsOwnerOrAdmin)
@@ -41,7 +43,6 @@ class TaskListView(RetrieveAPIView):
     def get(self, request):
         tasks = Todojob.objects.filter(author=request.user)
         serializer = TodoSerializer(tasks, many=True)
-
         return Response(serializer.data)
 
 
@@ -56,6 +57,8 @@ class CreateTaskView(RetrieveAPIView):
         serializer = TodoSerializer(data=request.data)
 
         if serializer.is_valid():
+            text = serializer.validated_data['text']
+            logger.info(request.user.email + ' created new task: ' + text)
             serializer.save(author=request.user)
         return Response(serializer.data)
 
@@ -68,7 +71,11 @@ class UpdateTaskView(RetrieveAPIView):
     def post(self, request, pk):
         task = Todojob.objects.get(pk=pk)
         serializer = TodoSerializer(instance=task, data=request.data)
+        first_text = task.text
         if serializer.is_valid():
+            text = serializer.validated_data['text']
+            logger.info(request.user.email + ' updated task: ' + first_text + ' to ' + text)
+            serializer.save(author=request.user)
             serializer.save()
         return Response(serializer.data)
 
@@ -83,7 +90,9 @@ class DeleteTask(RetrieveAPIView):
 
     def post(self,request,  pk):
         task = Todojob.objects.get(pk=pk)
+        text = task.text
         task.delete()
+        logger.info(request.user.email + ' deleted ' + text)
         return Response("Taks deleted successfully.")
 
 
