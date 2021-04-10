@@ -19,7 +19,6 @@ from jobs import permissions
 
 from user.serializers import UserSerializer
 
-from user.serializers import RemoveUserSerializer
 
 logger = logging.getLogger('django')
 
@@ -90,17 +89,4 @@ class Deactive(RetrieveAPIView):
         return Response("user deactivated")
 
 
-class RemoveUser(RetrieveUpdateDestroyAPIView):
-    permission_classes = (IsAuthenticated, permissions.IsAdmin)
-    authentication_class = JSONWebTokenAuthentication
-    queryset = User.objects.all()
-    serializer_class = RemoveUserSerializer
-
-    def post(self, request):
-        serializer = self.serializer_class(data=self.request.data)
-        serializer.is_valid(raise_exception=True)
-        email = serializer.validated_data['email']
-        task = User.objects.get(email=email)
-        task.delete()
-        return Response("user deleted successfully.")
 

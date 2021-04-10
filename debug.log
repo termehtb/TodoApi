@@ -65,3 +65,166 @@ INFO 2021-04-10 05:28:43,913  C:\Users\Asus\PycharmProjects\TodoAppApi\todorest\
 INFO 2021-04-10 05:28:44,338  Watching for file changes with StatReloader
 INFO 2021-04-10 05:28:49,121  user ram updated account
 INFO 2021-04-10 05:28:49,122  "POST /api/profile/update HTTP/1.1" 200 137
+INFO 2021-04-11 03:55:06,173  Watching for file changes with StatReloader
+WARNING 2021-04-11 03:55:10,446  Not Found: /
+WARNING 2021-04-11 03:55:10,446  "GET / HTTP/1.1" 404 2471
+WARNING 2021-04-11 03:55:10,500  Not Found: /favicon.ico
+WARNING 2021-04-11 03:55:10,501  "GET /favicon.ico HTTP/1.1" 404 2522
+WARNING 2021-04-11 03:56:55,447  Bad Request: /api/signup
+WARNING 2021-04-11 03:56:55,452  "POST /api/signup HTTP/1.1" 400 58
+INFO 2021-04-11 03:57:24,081  user test@gmail.com registered successfully
+INFO 2021-04-11 03:57:24,083  "POST /api/signup HTTP/1.1" 201 78
+INFO 2021-04-11 03:58:41,885  user test@gmail.comlogged in  successfully
+INFO 2021-04-11 03:58:41,886  "POST /api/signin HTTP/1.1" 200 329
+INFO 2021-04-11 03:59:03,142  user test@gmail.comlogged in  successfully
+INFO 2021-04-11 03:59:03,142  "POST /api/signin HTTP/1.1" 200 329
+WARNING 2021-04-11 03:59:58,610  Unauthorized: /api/delete
+WARNING 2021-04-11 03:59:58,611  "POST /api/delete HTTP/1.1" 401 58
+WARNING 2021-04-11 04:01:09,418  Bad Request: /api/signup
+WARNING 2021-04-11 04:01:09,419  "POST /api/signup HTTP/1.1" 400 58
+ERROR 2021-04-11 04:01:22,264  Internal Server Error: /api/signup
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\todorest\user\views.py", line 35, in post
+    serializer.save()
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\serializers.py", line 205, in save
+    self.instance = self.create(validated_data)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\todorest\user\serializers.py", line 28, in create
+    is_staff = validated_data.pop('is_staff')
+KeyError: 'is_staff'
+ERROR 2021-04-11 04:01:22,268  "POST /api/signup HTTP/1.1" 500 106291
+WARNING 2021-04-11 04:01:58,210  Bad Request: /api/signup
+WARNING 2021-04-11 04:01:58,210  "POST /api/signup HTTP/1.1" 400 82
+INFO 2021-04-11 04:02:04,812  user test1@gmail.com registered successfully
+INFO 2021-04-11 04:02:04,814  "POST /api/signup HTTP/1.1" 201 78
+INFO 2021-04-11 04:03:39,871  user ram@gmail.comlogged in  successfully
+INFO 2021-04-11 04:03:39,872  "POST /api/signin HTTP/1.1" 200 327
+INFO 2021-04-11 04:04:56,332  "GET /api/profile HTTP/1.1" 200 185
+INFO 2021-04-11 04:06:17,715  user ram updated account
+INFO 2021-04-11 04:06:17,717  "POST /api/profile/update HTTP/1.1" 200 137
+INFO 2021-04-11 04:07:32,704  ram@gmail.com created new task: todo1
+INFO 2021-04-11 04:07:32,713  "POST /job/create HTTP/1.1" 200 24
+INFO 2021-04-11 04:08:44,319  "GET /job/list HTTP/1.1" 301 0
+INFO 2021-04-11 04:08:44,339  "GET /job/list/ HTTP/1.1" 200 26
+INFO 2021-04-11 04:09:53,739  ram@gmail.com updated task: todo1 to todo16
+INFO 2021-04-11 04:09:53,752  "POST /job/update/16 HTTP/1.1" 200 25
+INFO 2021-04-11 04:10:16,337  ram@gmail.com deleted todo16
+INFO 2021-04-11 04:10:16,338  "POST /job/delete/16 HTTP/1.1" 200 28
+INFO 2021-04-11 04:10:45,709  "GET /manager/users HTTP/1.1" 200 1086
+INFO 2021-04-11 04:11:30,956  "GET /manager/tasks HTTP/1.1" 200 246
+ERROR 2021-04-11 04:12:49,594  Internal Server Error: /manager/adduser
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\todorest\manager\views.py", line 49, in post
+    serializer.save()
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\venv\lib\site-packages\rest_framework\serializers.py", line 205, in save
+    self.instance = self.create(validated_data)
+  File "C:\Users\Asus\PycharmProjects\TodoAppApi\todorest\user\serializers.py", line 28, in create
+    is_staff = validated_data.pop('is_staff')
+KeyError: 'is_staff'
+ERROR 2021-04-11 04:12:49,600  "POST /manager/adduser HTTP/1.1" 500 106636
+WARNING 2021-04-11 04:13:21,382  Bad Request: /manager/adduser
+WARNING 2021-04-11 04:13:21,382  "POST /manager/adduser HTTP/1.1" 400 82
+INFO 2021-04-11 04:13:28,743  "POST /manager/adduser HTTP/1.1" 201 78
+WARNING 2021-04-11 04:16:20,701  Not Found: /
+WARNING 2021-04-11 04:16:20,702  "GET / HTTP/1.1" 404 2471
+INFO 2021-04-11 04:16:21,237  C:\Users\Asus\PycharmProjects\TodoAppApi\todorest\manager\urls.py changed, reloading.
+INFO 2021-04-11 04:16:21,955  Watching for file changes with StatReloader
+INFO 2021-04-11 04:17:04,922  C:\Users\Asus\PycharmProjects\TodoAppApi\todorest\user\urls.py changed, reloading.
+INFO 2021-04-11 04:17:05,699  Watching for file changes with StatReloader
+INFO 2021-04-11 04:17:26,492  "POST /manager/admindelete HTTP/1.1" 200 28
+INFO 2021-04-11 04:18:02,118  "GET /admin/ HTTP/1.1" 200 5011
+INFO 2021-04-11 04:18:02,138  "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2021-04-11 04:18:02,138  "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2021-04-11 04:18:02,139  "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2021-04-11 04:18:02,140  "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+INFO 2021-04-11 04:18:02,141  "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2021-04-11 04:18:02,769  "GET /admin/ HTTP/1.1" 200 5011
+INFO 2021-04-11 04:18:02,789  "GET /static/admin/css/fonts.css HTTP/1.1" 304 0
+INFO 2021-04-11 04:18:02,794  "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+INFO 2021-04-11 04:18:02,795  "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2021-04-11 04:18:02,825  "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 304 0
+INFO 2021-04-11 04:18:02,825  "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 304 0
+INFO 2021-04-11 04:18:02,825  "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 304 0
+INFO 2021-04-11 04:18:05,263  "GET /admin/user/user/ HTTP/1.1" 200 9260
+INFO 2021-04-11 04:18:05,290  "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+INFO 2021-04-11 04:18:05,291  "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2021-04-11 04:18:05,293  "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2021-04-11 04:18:05,295  "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2021-04-11 04:18:05,297  "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2021-04-11 04:18:05,299  "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2021-04-11 04:18:05,300  "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2021-04-11 04:18:05,300  "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2021-04-11 04:18:05,300  "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2021-04-11 04:18:05,303  "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-04-11 04:18:05,337  "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+INFO 2021-04-11 04:18:11,492  "GET /admin/user/user/7a599de5-d34b-40e6-b1d6-a97c9485923a/change/ HTTP/1.1" 200 13696
+INFO 2021-04-11 04:18:11,515  "GET /static/admin/js/calendar.js HTTP/1.1" 304 0
+INFO 2021-04-11 04:18:11,517  "GET /static/admin/css/forms.css HTTP/1.1" 304 0
+INFO 2021-04-11 04:18:11,518  "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 304 0
+INFO 2021-04-11 04:18:11,524  "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-04-11 04:18:11,524  "GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+INFO 2021-04-11 04:18:11,529  "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+INFO 2021-04-11 04:18:11,529  "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+INFO 2021-04-11 04:18:11,584  "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 304 0
+INFO 2021-04-11 04:18:11,584  "GET /static/admin/img/icon-clock.svg HTTP/1.1" 304 0
+INFO 2021-04-11 04:18:16,096  "GET /admin/user/user/ HTTP/1.1" 200 9260
+INFO 2021-04-11 04:18:18,403  "GET /admin/user/user/406abc66-8555-4078-94ca-f0fdb076ebb5/change/ HTTP/1.1" 200 13730
+INFO 2021-04-11 04:18:18,426  "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-04-11 04:18:23,525  "GET /admin/user/user/ HTTP/1.1" 200 9260
+INFO 2021-04-11 04:18:25,428  "GET /admin/user/user/7a599de5-d34b-40e6-b1d6-a97c9485923a/change/ HTTP/1.1" 200 13696
+INFO 2021-04-11 04:18:25,453  "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-04-11 04:18:59,233  "GET /admin/user/user/ HTTP/1.1" 200 9260
+INFO 2021-04-11 04:19:00,917  "GET /admin/user/user/e5ffd3a8-c792-4237-ac92-81213f53d854/change/ HTTP/1.1" 200 13728
+INFO 2021-04-11 04:19:00,944  "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-04-11 04:19:11,407  "GET /admin/user/user/ HTTP/1.1" 200 9260
+INFO 2021-04-11 04:19:13,286  "GET /admin/user/user/c42b7770-a89c-43a6-95a0-2ae7fd4d2f11/change/ HTTP/1.1" 200 13722
+INFO 2021-04-11 04:19:13,313  "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-04-11 04:19:17,059  "GET /admin/user/user/ HTTP/1.1" 200 9260
+INFO 2021-04-11 04:19:18,609  "GET /admin/user/user/a3555ed0-7ede-4576-af03-6d70ec195c0c/change/ HTTP/1.1" 200 13680
+INFO 2021-04-11 04:19:18,636  "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-04-11 04:19:21,516  "GET /admin/user/user/ HTTP/1.1" 200 9260
+INFO 2021-04-11 04:20:20,535  user ram@gmail.comdeactivated account
+INFO 2021-04-11 04:20:20,536  "POST /api/deactive HTTP/1.1" 200 18
+WARNING 2021-04-11 04:20:57,065  Bad Request: /api/signin
+WARNING 2021-04-11 04:20:57,070  "POST /api/signin HTTP/1.1" 400 74
+INFO 2021-04-11 04:21:04,359  "GET /admin/user/user/9827a69b-fb96-4ac2-9282-cc5121c37695/change/ HTTP/1.1" 200 13712
+INFO 2021-04-11 04:21:04,385  "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-04-11 04:21:13,889  user sam@gmail.comlogged in  successfully
+INFO 2021-04-11 04:21:13,890  "POST /api/signin HTTP/1.1" 200 327
+WARNING 2021-04-11 04:21:31,228  Forbidden: /manager/tasks
+WARNING 2021-04-11 04:21:31,228  "GET /manager/tasks HTTP/1.1" 403 63
+WARNING 2021-04-11 04:21:52,078  Unauthorized: /api/delete
+WARNING 2021-04-11 04:21:52,079  "POST /api/delete HTTP/1.1" 401 38
+INFO 2021-04-11 04:22:06,488  user sam@gmail.comdeleted account
+INFO 2021-04-11 04:22:06,490  "POST /api/delete HTTP/1.1" 200 28
