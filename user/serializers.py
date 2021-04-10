@@ -70,3 +70,6 @@ class UserLoginSerializer(serializers.Serializer):
             'token': jwt_token
         }
 
+
+class RemoveUserSerializer(serializers.Serializer):
+    email = serializers.CharField(max_length=255)

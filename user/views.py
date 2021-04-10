@@ -4,7 +4,7 @@ from django.shortcuts import render
 
 # Create your views here.
 from rest_framework import status
-from rest_framework.generics import CreateAPIView, RetrieveAPIView, get_object_or_404
+from rest_framework.generics import CreateAPIView, RetrieveAPIView, get_object_or_404, RetrieveUpdateDestroyAPIView
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework_jwt.authentication import JSONWebTokenAuthentication
@@ -18,6 +18,8 @@ from user.models import User
 from jobs import permissions
 
 from user.serializers import UserSerializer
+
+from user.serializers import RemoveUserSerializer
 
 logger = logging.getLogger('django')
 
@@ -88,14 +90,17 @@ class Deactive(RetrieveAPIView):
         return Response("user deactivated")
 
 
-class RemoveUser(RetrieveAPIView):
+class RemoveUser(RetrieveUpdateDestroyAPIView):
     permission_classes = (IsAuthenticated, permissions.IsAdmin)
     authentication_class = JSONWebTokenAuthentication
     queryset = User.objects.all()
-    serializer_class = UserSerializer
+    serializer_class = RemoveUserSerializer
 
-    def post(self, request, pk):
-        task = User.objects.get(pk=pk)
+    def post(self, request):
+        serializer = self.serializer_class(data=self.request.data)
+        serializer.is_valid(raise_exception=True)
+        email = serializer.validated_data['email']
+        task = User.objects.get(email=email)
         task.delete()
         return Response("user deleted successfully.")
 
