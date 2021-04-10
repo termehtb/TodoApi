@@ -1,3 +1,5 @@
+import logging
+
 from django.shortcuts import render
 
 # Create your views here.
@@ -14,6 +16,7 @@ from jobs import permissions
 
 from user.serializers import UserSerializer
 
+logger = logging.getLogger('django')
 
 class UserProfileView(RetrieveAPIView):
 
@@ -55,4 +58,6 @@ class ProfileUpdate(RetrieveAPIView):
         serializer = UserSerializer(instance=profile, data=request.data)
         if serializer.is_valid():
             serializer.save()
+            logger.info('user ' + profile.first_name + ' updated account')
+
         return Response(serializer.data)
