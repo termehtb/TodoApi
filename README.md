@@ -29,3 +29,6 @@ The response should look like this
 }<br>
 
 to authenticate go to Authorization and select Bearer Token from TYPE, paste the token.
+
+## postman Request Collection
+https://www.postman.com/collections/4951f1f9bfe90b34982d
