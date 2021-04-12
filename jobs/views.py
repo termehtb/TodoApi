@@ -30,6 +30,8 @@ from userprofile.models import UserProfile
 
 from jobs.utils import Red
 
+from jobs.permissions import IsOwnerOrAdminOrReadOnly
+
 """
 Below Function going to display all the tasks store in the data base.
 """
@@ -64,35 +66,44 @@ class CreateTaskView(RetrieveAPIView):
 
 
 class UpdateTaskView(RetrieveAPIView):
-    permission_classes = (IsAuthenticated, permissions.IsOwnerOrAdminOrReadOnly)
-    authentication_class = JSONWebTokenAuthentication
-    queryset = Todojob.objects.all()
+    permission_classes = (IsAuthenticated, IsOwnerOrAdmin)
+    queryset = Todojob
     serializer_class = TodoSerializer
+    authentication_class = JSONWebTokenAuthentication
     def post(self, request, pk):
         task = Todojob.objects.get(pk=pk)
         serializer = TodoSerializer(instance=task, data=request.data)
         first_text = task.text
         if serializer.is_valid():
-            text = serializer.validated_data['text']
-            logger.critical(request.user.email + ' updated task: ' + first_text + ' to ' + text)
-            serializer.save(author=request.user)
-            serializer.save()
+            if task.author == request.user or request.user.is_superuser:
+                text = serializer.validated_data['text']
+                logger.critical(request.user.email + ' updated task: ' + first_text + ' to ' + text)
+                serializer.save(author=request.user)
+                serializer.save()
+            else:
+                return Response("dont have the permission to update this task.")
+
         return Response(serializer.data)
 
 
 
 
 class DeleteTask(RetrieveAPIView):
-    permission_classes = (IsAuthenticated,permissions.IsOwnerOrAdmin)
+    serializer_class = TodoSerializer
+    permission_classes = (IsAuthenticated, permissions.IsOwnerOrAdmin)
     authentication_class = JSONWebTokenAuthentication
     queryset = Todojob.objects.all()
-    serializer_class = TodoSerializer
 
     def post(self,request,  pk):
+
         task = Todojob.objects.get(pk=pk)
         text = task.text
-        task.delete()
-        logger.critical(request.user.email + ' deleted ' + text)
-        return Response("Taks deleted successfully.")
+        if task.author == request.user or request.user.is_superuser:
+            task.delete()
+            logger.critical(request.user.email + ' deleted ' + text)
+        else:
+            return Response("you cannot delete this task")
+
+        return Response("Task deleted successfully.")
 
 

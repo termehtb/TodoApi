@@ -1,5 +1,6 @@
 from rest_framework import permissions
 
+
 class IsOwnerOrAdminOrReadOnly(permissions.BasePermission):
     """
         Custom permission decorator to enable only
@@ -19,6 +20,7 @@ class IsOwnerOrAdminOrReadOnly(permissions.BasePermission):
 
         return True if request.method in permissions.SAFE_METHODS or obj.author == request.user or request.user.is_superuser else False
 
+
 class IsOwnerOrAdmin(permissions.BasePermission):
     """Class permission used to define the access of a view"""
 
@@ -31,7 +33,8 @@ class IsOwnerOrAdmin(permissions.BasePermission):
             :param view: the targeted view
             :param obj: the requested object
         """
-        return request.user and (obj.author == request.user or request.user.is_superuser)
+        return True if  (obj.author == request.user or request.user.is_superuser) else False
+
 
 class IsSameUserOrAdmin(permissions.BasePermission):
     """Class permission used to define the access of a view"""
@@ -46,6 +49,7 @@ class IsSameUserOrAdmin(permissions.BasePermission):
             :param obj: the requested object
         """
         return request.user and (obj == request.user or request.user.is_superuser)
+
 
 class IsAdmin(permissions.BasePermission):
     """
@@ -63,11 +67,13 @@ class IsAdmin(permissions.BasePermission):
         """
         return request.user and request.user.is_superuser
 
+
 class IsNotBanned(permissions.BasePermission):
     """
         Check if the user is ban and can access or not
         to the page
     """
+
     def has_permission(self, request, view):
         """
             Check if the user is not ban
