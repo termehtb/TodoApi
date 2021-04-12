@@ -38,7 +38,7 @@ class UserRegistrationView(CreateAPIView):
             'status code': status_code,
             'message': 'User registered  successfully',
         }
-        logger.info('user ' + email + ' registered successfully')
+        logger.critical('user ' + email + ' registered successfully')
 
 
 
@@ -59,7 +59,7 @@ class UserLoginView(RetrieveAPIView):
             'token': serializer.data['token'],
             }
         status_code = status.HTTP_200_OK
-        logger.info('user ' + email + 'logged in  successfully')
+        logger.critical('user ' + email + ' logged in  successfully')
 
 
         return Response(response, status=status_code)
@@ -71,7 +71,7 @@ class DeleteUser(RetrieveAPIView):
         ins = request.user
         email = ins.email
         ins.delete()
-        logger.info('user ' + email + 'deleted account')
+        logger.critical('user ' + email + 'deleted account')
         return Response("user deleted successfully.")
 
 
@@ -85,7 +85,7 @@ class Deactive(RetrieveAPIView):
         user = request.user
         user.is_active = False
         user.save()
-        logger.info('user ' + user.email + 'deactivated account')
+        logger.critical('user ' + user.email + 'deactivated account')
         return Response("user deactivated")
 
 

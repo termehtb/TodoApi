@@ -57,7 +57,7 @@ class ProfileUpdate(RetrieveAPIView):
         profile = UserProfile.objects.get(user=request.user)
         serializer = UserSerializer(instance=profile, data=request.data)
         if serializer.is_valid():
+            logger.critical('user ' + profile.first_name + ' updated account')
             serializer.save()
-            logger.info('user ' + profile.first_name + ' updated account')
 
         return Response(serializer.data)

@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'jobs.apps.JobsConfig',
     'manager.apps.ManagerConfig',
     'django_user_interaction_log',
+    'django_db_logger',
 
 ]
 
@@ -130,6 +131,12 @@ DATABASES = {
     }
 }
 
+# def skip_static_requests(record):
+#     if record.args[0].startswith('user'):  # filter whatever you want
+#         return False
+#     return True
+
+
 LOGGING = {
     'version': 1,
     'loggers': {
@@ -143,8 +150,7 @@ LOGGING = {
     'handlers': {
         'file': {
             'level': 'INFO',
-            'class': 'logging.FileHandler',
-            'filename': './debug.log',
+            'class': 'django_db_logger.db_log_handler.DatabaseLogHandler',
             'formatter': 'verbose',
 
         }
@@ -154,7 +160,14 @@ LOGGING = {
             'format': '{levelname} {asctime}  {message}',
             'style': '{',
         },
-    }
+    },
+    # 'filters': {
+    #     # use Django's built in CallbackFilter to point to your filter
+    #     'skip_static_requests': {
+    #         '()': 'django.utils.log.CallbackFilter',
+    #         'callback': skip_static_requests
+    #     }
+    # },
 
 }
 

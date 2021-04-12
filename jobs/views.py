@@ -58,7 +58,7 @@ class CreateTaskView(RetrieveAPIView):
 
         if serializer.is_valid():
             text = serializer.validated_data['text']
-            logger.info(request.user.email + ' created new task: ' + text)
+            logger.critical(request.user.email + ' created new task: ' + text)
             serializer.save(author=request.user)
         return Response(serializer.data)
 
@@ -74,7 +74,7 @@ class UpdateTaskView(RetrieveAPIView):
         first_text = task.text
         if serializer.is_valid():
             text = serializer.validated_data['text']
-            logger.info(request.user.email + ' updated task: ' + first_text + ' to ' + text)
+            logger.critical(request.user.email + ' updated task: ' + first_text + ' to ' + text)
             serializer.save(author=request.user)
             serializer.save()
         return Response(serializer.data)
@@ -92,7 +92,7 @@ class DeleteTask(RetrieveAPIView):
         task = Todojob.objects.get(pk=pk)
         text = task.text
         task.delete()
-        logger.info(request.user.email + ' deleted ' + text)
+        logger.critical(request.user.email + ' deleted ' + text)
         return Response("Taks deleted successfully.")
 
 
