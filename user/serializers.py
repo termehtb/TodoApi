@@ -20,16 +20,12 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ('email', 'password', 'is_staff', 'profile', )
+        fields = ('email', 'password', 'profile', )
         extra_kwargs = {'password': {'write_only': True}}
 
     def create(self, validated_data):
         profile_data = validated_data.pop('profile')
-        is_staff = validated_data.pop('is_staff')
-        if is_staff == False:
-            user = User.objects.create_superuser(**validated_data)
-        else:
-            user = User.objects.create_user(**validated_data)
+        user = User.objects.create_user(**validated_data)
         UserProfile.objects.create(
             user=user,
             first_name=profile_data['first_name'],

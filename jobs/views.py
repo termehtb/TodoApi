@@ -64,7 +64,7 @@ class CreateTaskView(RetrieveAPIView):
 
 
 class UpdateTaskView(RetrieveAPIView):
-    permission_classes = (IsAuthenticated,permissions.IsOwnerOrAdmin)
+    permission_classes = (IsAuthenticated, permissions.IsOwnerOrAdminOrReadOnly)
     authentication_class = JSONWebTokenAuthentication
     queryset = Todojob.objects.all()
     serializer_class = TodoSerializer
