@@ -25,7 +25,7 @@ SECRET_KEY = 'cnro1+1j*%@zmuplp-mdcn@axvg@z2a3zbck)o&76==o0y6d(c'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost']
 
 
 # Application definition
