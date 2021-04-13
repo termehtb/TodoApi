@@ -4,12 +4,14 @@ from manager.views import UserView, AllTaskListView, UserRegistrationView , Admi
 
 from manager import views
 
+from manager.views import RemoveUser
+
 urlpatterns = [
 
     path('users',UserView.as_view(), name="user-view"),
     path('tasks', AllTaskListView.as_view(), name="task-view"),
     path('adduser', UserRegistrationView.as_view(), name="create-user"),
-    path('admindelete', views.RemoveUser.as_view(), name="admin-delete"),
+    path('remove/<slug:pk>', RemoveUser.as_view(), name="remove-user"),
     path('signup', AdminRegistrationView.as_view(), name="register-admin"),
 
 ]

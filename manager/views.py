@@ -17,9 +17,10 @@ from user.serializers import UserRegistrationSerializer
 
 from user.models import User
 
-from manager.Serializers import RemoveUserSerializer
 
 from manager.Serializers import AdminRegistrationSerializer
+
+from manager.Serializers import UserViewSerializer
 
 
 class UserView(RetrieveAPIView):
@@ -27,8 +28,8 @@ class UserView(RetrieveAPIView):
     authentication_class = JSONWebTokenAuthentication
 
     def get(self, request):
-        users = UserProfile.objects.all()
-        serializer = UserSerializer(users, many=True)
+        users = User.objects.all()
+        serializer = UserViewSerializer(users, many=True)
         return Response(serializer.data)
 
 
@@ -37,10 +38,11 @@ class AllTaskListView(RetrieveAPIView):
     permission_classes = (IsAuthenticated, permissions.IsAdmin)
     authentication_class = JSONWebTokenAuthentication
 
-    def get(self,request ):
+    def get(self,request):
         tasks = Todojob.objects.all()
         serializer = TodoSerializer(tasks, many=True)
         return Response(serializer.data)
+
 
 class UserRegistrationView(CreateAPIView):
     serializer_class = UserRegistrationSerializer
@@ -61,19 +63,13 @@ class UserRegistrationView(CreateAPIView):
         return Response(response, status=status_code)
 
 
-
 class RemoveUser(RetrieveUpdateDestroyAPIView):
     permission_classes = (IsAuthenticated, permissions.IsAdmin)
     authentication_class = JSONWebTokenAuthentication
-    queryset = User.objects.all()
-    serializer_class = RemoveUserSerializer
 
-    def post(self, request):
-        serializer = self.serializer_class(data=self.request.data)
-        serializer.is_valid(raise_exception=True)
-        email = serializer.validated_data['email']
-        task = User.objects.get(email=email)
-        task.delete()
+    def post(self, request, pk):
+        removing = User.objects.get(pk=pk)
+        removing.delete()
         return Response("user deleted successfully.")
 
 

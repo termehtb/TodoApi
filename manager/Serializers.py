@@ -5,9 +5,11 @@ from user.serializers import UserSerializer
 from userprofile.models import UserProfile
 
 
-class RemoveUserSerializer(serializers.Serializer):
-    email = serializers.CharField(max_length=255)
 
+class UserViewSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ('id', 'email', 'password', 'profile', )
 
 class AdminRegistrationSerializer(serializers.ModelSerializer):
 
