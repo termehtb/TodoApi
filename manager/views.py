@@ -28,7 +28,7 @@ class UserView(RetrieveAPIView):
     authentication_class = JSONWebTokenAuthentication
 
     def get(self, request):
-        users = User.objects.all()
+        users = UserProfile.objects.all()
         serializer = UserViewSerializer(users, many=True)
         return Response(serializer.data)
 

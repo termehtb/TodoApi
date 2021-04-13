@@ -8,8 +8,9 @@ from userprofile.models import UserProfile
 
 class UserViewSerializer(serializers.ModelSerializer):
     class Meta:
-        model = User
-        fields = ('id', 'email', 'password', 'profile', )
+        model = UserProfile
+        fields = ('user', 'first_name', 'last_name', 'phone_number', 'age', 'gender')
+
 
 class AdminRegistrationSerializer(serializers.ModelSerializer):
 
