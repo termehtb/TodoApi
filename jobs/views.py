@@ -48,7 +48,17 @@ class TaskListView(RetrieveAPIView):
         return Response(serializer.data)
 
 
+class TaskView(RetrieveAPIView):
+    permission_classes = (IsAuthenticated, permissions.IsOwnerOrAdmin)
+    authentication_class = JSONWebTokenAuthentication
 
+    def get(self, request, pk):
+        task = Todojob.objects.get(pk=pk)
+        if task.author == request.user:
+            serializer = TodoSerializer(task)
+            return Response(serializer.data)
+        else:
+            return Response("This task is not yours")
 
 
 class CreateTaskView(RetrieveAPIView):
