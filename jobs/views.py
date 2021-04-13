@@ -88,7 +88,7 @@ class UpdateTaskView(RetrieveAPIView):
             if task.author == request.user or request.user.is_superuser:
                 text = serializer.validated_data['text']
                 logger.critical(request.user.email + ' updated task: ' + first_text + ' to ' + text)
-                serializer.save(author=request.user)
+                serializer.save(author=task.author)
                 serializer.save()
             else:
                 return Response("dont have the permission to update this task.")
