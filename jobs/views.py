@@ -72,7 +72,7 @@ class CreateTaskView(RetrieveAPIView):
             text = serializer.validated_data['text']
             logger.critical(request.user.email + ' created new task: ' + text)
             serializer.save(author=request.user)
-        return Response(serializer.data)
+        return Response(serializer.data, status=201)
 
 
 class UpdateTaskView(RetrieveAPIView):

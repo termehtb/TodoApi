@@ -14,16 +14,20 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.http.response import Http404
 from django.urls import path
 from django.urls.conf import include
+from django.urls.exceptions import NoReverseMatch
 
 urlpatterns = [
-   path('admin/', admin.site.urls),
-   path('api/', include('user.urls')),
-   path('api/', include('userprofile.urls')),
-   path('job/', include('jobs.urls')),
-   path('manager/', include('manager.urls')),
-   path('django_user_interaction_log/', include('django_user_interaction_log.urls')),
+      path('admin/', admin.site.urls),
+      path('api/', include('user.urls')),
+      path('api/', include('userprofile.urls')),
+      path('job/', include('jobs.urls')),
+      path('manager/', include('manager.urls')),
+      path('django_user_interaction_log/', include('django_user_interaction_log.urls')),
 
 
 ]
+
+
