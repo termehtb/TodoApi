@@ -39,9 +39,6 @@ class UserRegistrationView(CreateAPIView):
             'message': 'User registered  successfully',
         }
         logger.critical('user ' + email + ' registered successfully')
-
-
-
         return Response(response, status=status_code)
 
 class UserLoginView(RetrieveAPIView):

@@ -7,7 +7,7 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.utils.datetime_safe import datetime
-from rest_framework import generics
+from rest_framework import generics, status
 from rest_framework.decorators import api_view, action
 from rest_framework.generics import RetrieveAPIView, get_object_or_404, UpdateAPIView
 from rest_framework.response import Response
@@ -67,12 +67,13 @@ class CreateTaskView(RetrieveAPIView):
 
     def post(self,request):
         serializer = TodoSerializer(data=request.data)
-
         if serializer.is_valid():
+            status_code = status.HTTP_201_CREATED
             text = serializer.validated_data['text']
             logger.critical(request.user.email + ' created new task: ' + text)
             serializer.save(author=request.user)
-        return Response(serializer.data, status=201)
+
+        return Response(serializer.data, status=status_code)
 
 
 class UpdateTaskView(RetrieveAPIView):
