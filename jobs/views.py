@@ -77,7 +77,6 @@ class CreateTaskView(RetrieveAPIView):
 
 class UpdateTaskView(RetrieveAPIView):
     permission_classes = (IsAuthenticated, IsOwnerOrAdmin)
-    queryset = Todojob
     serializer_class = TodoSerializer
     authentication_class = JSONWebTokenAuthentication
     def post(self, request, pk):
@@ -102,7 +101,7 @@ class DeleteTask(RetrieveAPIView):
     serializer_class = TodoSerializer
     permission_classes = (IsAuthenticated, permissions.IsOwnerOrAdmin)
     authentication_class = JSONWebTokenAuthentication
-    queryset = Todojob.objects.all()
+
 
     def post(self,request,  pk):
 
