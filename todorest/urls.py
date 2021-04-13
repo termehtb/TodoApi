@@ -26,8 +26,9 @@ urlpatterns = [
       path('job/', include('jobs.urls')),
       path('manager/', include('manager.urls')),
       path('django_user_interaction_log/', include('django_user_interaction_log.urls')),
-
-
 ]
+
+handler404 = 'utils.views.error_404'
+handler500 = 'utils.views.error_500'
 
 

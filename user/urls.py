@@ -10,11 +10,10 @@ from user import views
 
 
 urlpatterns = [
-    url(r'^signup', UserRegistrationView.as_view()),
+    path('signup', UserRegistrationView.as_view()),
     url(r'^signin', views.UserLoginView.as_view()),
     path('delete', views.DeleteUser.as_view()),
     url('deactive', views.Deactive.as_view()),
-
 
 ]
 handler404 = 'utils.views.error_404'
