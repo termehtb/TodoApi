@@ -9,7 +9,7 @@ class Todojob(models.Model):
     completed = models.BooleanField(default=False, blank=True, null=True)
     date = models.DateTimeField(auto_now_add=True, null=True)
     image = models.ImageField(null=True, blank=True, default=' static/icon.png')
-    author = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    author = models.ForeignKey(User, on_delete=models.CASCADE, null=True , related_name='owner')
 
     def __str__(self):
         return self.text
