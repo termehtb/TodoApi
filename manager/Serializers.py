@@ -6,7 +6,6 @@ from userprofile.models import UserProfile
 
 
 class UserViewSerializer(serializers.ModelSerializer):
-
     class Meta:
         model = UserProfile
         fields = ('user', 'first_name', 'last_name', 'phone_number', 'age', 'gender')

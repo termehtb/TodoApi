@@ -10,6 +10,7 @@ from django.utils.datetime_safe import datetime
 from rest_framework import generics, status
 from rest_framework.decorators import api_view, action
 from rest_framework.generics import RetrieveAPIView, get_object_or_404, UpdateAPIView
+from rest_framework.parsers import JSONParser, FormParser, MultiPartParser
 from rest_framework.response import Response
 
 from jobs.models import Todojob
@@ -22,19 +23,8 @@ from jobs import permissions
 from jobs.permissions import IsNotBanned, IsAdmin, IsOwnerOrAdmin
 from rest_framework_jwt.authentication import JSONWebTokenAuthentication
 
-from user.models import User
 
-from user.serializers import UserSerializer
 
-from userprofile.models import UserProfile
-
-from jobs.utils import Red
-
-from jobs.permissions import IsOwnerOrAdminOrReadOnly
-
-"""
-Below Function going to display all the tasks store in the data base.
-"""
 
 logger = logging.getLogger('django')
 
@@ -65,8 +55,8 @@ class CreateTaskView(RetrieveAPIView):
     permission_classes = (IsAuthenticated,)
     authentication_class = JSONWebTokenAuthentication
 
-    def post(self,request):
-        serializer = TodoSerializer(data=request.data)
+    def post(self, request):
+        serializer = TodoSerializer( data=request.data)
         if serializer.is_valid():
             status_code = status.HTTP_201_CREATED
             text = serializer.validated_data['text']
@@ -115,5 +105,6 @@ class DeleteTask(RetrieveAPIView):
             return Response("you cannot delete this task")
 
         return Response("Task deleted successfully.")
+
 
 

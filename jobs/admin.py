@@ -4,6 +4,7 @@ from django.contrib import admin
 from jobs.models import Todojob
 
 
+
 @admin.register(Todojob)
 class TodoAdmin(admin.ModelAdmin):
     pass
