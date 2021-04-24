@@ -155,7 +155,7 @@ LOGGING = {
         'file': {
             'level': 'INFO',
             # 'class': 'django_db_logger.db_log_handler.DatabaseLogHandler',
-            'class': 'utils.redis_handler.RedisHandler',
+            'class': 'utils.redis_handler.RedisHandler()',
 
         }
     },
