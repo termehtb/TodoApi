@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     'django_user_interaction_log',
     'django_db_logger',
     'versatileimagefield',
-
+    'redis_log_handler',
 ]
 
 AUTH_USER_MODEL = 'user.User'
@@ -155,7 +155,7 @@ LOGGING = {
         'file': {
             'level': 'INFO',
             # 'class': 'django_db_logger.db_log_handler.DatabaseLogHandler',
-            'class': 'utils.redis_handler.RedisHandler()',
+            'class': 'utils.redis_handler.RedisHandler',
 
         }
     },

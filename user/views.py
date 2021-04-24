@@ -20,9 +20,25 @@ from jobs import permissions
 from user.serializers import UserSerializer
 
 from utils.redis_handler import RedisHandler
+from redis_log_handler import RedisKeyHandler
 
-logger = logging.getLogger('django')
+# logger = logging.getLogger('django')
 
+import logging
+
+from utils import redis_handler
+#
+# logger = logging.getLogger('my_app')
+# logger.setLevel(logging.DEBUG)
+# logger.addHandler(redis_handler.RedisHandler())
+
+example_handler = RedisKeyHandler('example_key')  # Default parameters for Redis connection are used
+formatter = logging.Formatter("%(asctime)s - %(message)s")
+
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
+example_handler.formatter = formatter
+logger.addHandler(example_handler)
 
 class UserRegistrationView(CreateAPIView):
     serializer_class = UserRegistrationSerializer
@@ -42,6 +58,7 @@ class UserRegistrationView(CreateAPIView):
         logger.critical('user ' + email + ' registered successfully')
         return Response(response, status=status_code)
 
+
 class UserLoginView(RetrieveAPIView):
     permission_classes = (AllowAny,)
     serializer_class = UserLoginSerializer
@@ -57,7 +74,7 @@ class UserLoginView(RetrieveAPIView):
             'token': serializer.data['token'],
             }
         status_code = status.HTTP_200_OK
-        logger.critical('user ' + email + ' logged in  successfully')
+        logger.critical('user logged in')
 
         return Response(response, status=status_code)
 
