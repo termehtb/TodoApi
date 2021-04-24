@@ -2,7 +2,7 @@ import logging
 
 import kwargs as kwargs
 import self as self
-from django.http.response import JsonResponse
+from django.http.response import JsonResponse, Http404
 from django.shortcuts import render
 
 # Create your views here.
@@ -73,6 +73,7 @@ class UpdateTaskView(RetrieveAPIView):
     serializer_class = TodoSerializer
     authentication_class = JSONWebTokenAuthentication
 
+
     def post(self, request, pk):
         task = Todojob.objects.get(pk=pk)
         serializer = TodoSerializer(instance=task, data=request.data)
@@ -107,6 +108,5 @@ class DeleteTask(RetrieveAPIView):
 
         status_code = status.HTTP_204_NO_CONTENT
         return Response("Task deleted successfully.", status=status_code)
-
 
 
