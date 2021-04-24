@@ -19,6 +19,7 @@ from jobs import permissions
 
 from user.serializers import UserSerializer
 
+from utils.redis_handler import RedisHandler
 
 logger = logging.getLogger('django')
 
