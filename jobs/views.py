@@ -24,9 +24,8 @@ from jobs.permissions import IsNotBanned, IsAdmin, IsOwnerOrAdmin
 from rest_framework_jwt.authentication import JSONWebTokenAuthentication
 
 
-
-
 logger = logging.getLogger('django')
+
 
 class TaskListView(RetrieveAPIView):
     permission_classes = (IsAuthenticated, permissions.IsOwnerOrAdmin)
@@ -48,7 +47,8 @@ class TaskView(RetrieveAPIView):
             serializer = TodoSerializer(task)
             return Response(serializer.data)
         else:
-            return Response("This task is not yours")
+            status_code = status.HTTP_403_FORBIDEN
+            return Response("This task is not yours", status=status_code)
 
 
 class CreateTaskView(RetrieveAPIView):
@@ -84,7 +84,7 @@ class UpdateTaskView(RetrieveAPIView):
                 serializer.save(author=task.author)
                 serializer.save()
             else:
-                status_code = status.HTTP_400_BAD_REQUEST
+                status_code = status.HTTP_403_FORBIDEN
                 return Response("dont have the permission to update this task.",  status=status_code)
 
         return Response(serializer.data)
@@ -102,8 +102,8 @@ class DeleteTask(RetrieveAPIView):
             task.delete()
             logger.critical(request.user.email + ' deleted ' + text)
         else:
-             status_code = status.HTTP_400_BAD_REQUEST
-             return Response("you cannot delete this task", status=status_code)
+            status_code = status.HTTP_403_FORBIDEN
+            return Response("you cannot delete this task", status=status_code)
 
         return Response("Task deleted successfully.")
 
