@@ -62,14 +62,17 @@ class CreateTaskView(RetrieveAPIView):
             text = serializer.validated_data['text']
             logger.critical(request.user.email + ' created new task: ' + text)
             serializer.save(author=request.user)
-
-        return Response(serializer.data, status=status_code)
+            return Response(serializer.data, status=status_code)
+        else:
+            status_code = status.HTTP_400_BAD_REQUEST
+            return Response('data is not valid', status=status_code)
 
 
 class UpdateTaskView(RetrieveAPIView):
     permission_classes = (IsAuthenticated, IsOwnerOrAdmin)
     serializer_class = TodoSerializer
     authentication_class = JSONWebTokenAuthentication
+
     def post(self, request, pk):
         task = Todojob.objects.get(pk=pk)
         serializer = TodoSerializer(instance=task, data=request.data)
@@ -81,11 +84,10 @@ class UpdateTaskView(RetrieveAPIView):
                 serializer.save(author=task.author)
                 serializer.save()
             else:
-                return Response("dont have the permission to update this task.")
+                status_code = status.HTTP_400_BAD_REQUEST
+                return Response("dont have the permission to update this task.",  status=status_code)
 
         return Response(serializer.data)
-
-
 
 
 class DeleteTask(RetrieveAPIView):
@@ -93,16 +95,15 @@ class DeleteTask(RetrieveAPIView):
     permission_classes = (IsAuthenticated, permissions.IsOwnerOrAdmin)
     authentication_class = JSONWebTokenAuthentication
 
-
     def post(self,request,  pk):
-
         task = Todojob.objects.get(pk=pk)
         text = task.text
         if task.author == request.user or request.user.is_superuser:
             task.delete()
             logger.critical(request.user.email + ' deleted ' + text)
         else:
-            return Response("you cannot delete this task")
+             status_code = status.HTTP_400_BAD_REQUEST
+             return Response("you cannot delete this task", status=status_code)
 
         return Response("Task deleted successfully.")
 
