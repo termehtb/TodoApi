@@ -58,21 +58,20 @@ class UserLoginView(RetrieveAPIView):
         status_code = status.HTTP_200_OK
         logger.critical('user ' + email + ' logged in  successfully')
 
-
         return Response(response, status=status_code)
+
 
 class DeleteUser(RetrieveAPIView):
     permission_classes = (IsAuthenticated,)
     authentication_class = JSONWebTokenAuthentication
+
     def post(self, request):
         ins = request.user
         email = ins.email
         ins.delete()
         status_code = status.HTTP_204_NO_CONTENT
         logger.critical('user ' + email + 'deleted account')
-        return Response("user deleted successfully." , status=status_code)
-
-
+        return Response("user deleted successfully.", status=status_code)
 
 
 class Deactive(RetrieveAPIView):
