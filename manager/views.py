@@ -71,7 +71,7 @@ class RemoveUser(RetrieveUpdateDestroyAPIView):
         removing = User.objects.get(pk=pk)
         removing.delete()
         status_code = status.HTTP_204_NO_CONTENT
-        return Response("user deleted successfully." , status=status_code)
+        return Response("user deleted successfully.", status=status_code)
 
 
 class AdminRegistrationView(CreateAPIView):

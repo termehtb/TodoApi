@@ -68,8 +68,9 @@ class DeleteUser(RetrieveAPIView):
         ins = request.user
         email = ins.email
         ins.delete()
+        status_code = status.HTTP_204_NO_CONTENT
         logger.critical('user ' + email + 'deleted account')
-        return Response("user deleted successfully.")
+        return Response("user deleted successfully." , status=status_code)
 
 
 
