@@ -95,7 +95,7 @@ class DeleteTask(RetrieveAPIView):
     permission_classes = (IsAuthenticated, permissions.IsOwnerOrAdmin)
     authentication_class = JSONWebTokenAuthentication
 
-    def post(self,request,  pk):
+    def post(self, request,  pk):
         task = Todojob.objects.get(pk=pk)
         text = task.text
         if task.author == request.user or request.user.is_superuser:
@@ -105,7 +105,8 @@ class DeleteTask(RetrieveAPIView):
             status_code = status.HTTP_403_FORBIDEN
             return Response("you cannot delete this task", status=status_code)
 
-        return Response("Task deleted successfully.")
+        status_code = status.HTTP_204_NO_CONTENT
+        return Response("Task deleted successfully.", status=status_code)
 
 
 
